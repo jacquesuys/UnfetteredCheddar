@@ -6,6 +6,11 @@
         <!-- Title -->
         <input class="gibletTitleInput" type="text" placeholder="Title" value="{{taskname}}">
 
+      <div>
+        Giblet On / Off
+        <input class="gibletRunningStatusForm" type="checkbox" checked="{{active}}" />
+      </div>
+
       <div class="urlDiv">
         <!-- Url list -->
         {{#each url}}
@@ -27,31 +32,29 @@
           </div>
         {{/ each}}
       </div>
-        <div class="keywordDiv">Keywords:
-          <input class="keywordInput" placeholder="keyword, keyword" type="text" value="{{addSpaceAfterCommas keywords}}" >
-        </div>
+      <div class="keywordDiv">Keywords:
+        <input class="keywordInput" placeholder="keyword, keyword" type="text" value="{{addSpaceAfterCommas keywords}}" >
+      </div>
 
-        <div>
-          Check every:
-          <span class="fa fa-clock-o"></span>
-          <input class="cronJobTimer" value="{{frequency}}" type="number" gibletID="{{_id}}"/>
-          minutes
-        </div>
+      <div>
+        Check every:
+        <span class="fa fa-clock-o"></span>
+        <input class="cronJobTimer" value="{{frequency}}" type="number" gibletID="{{_id}}"/>
+        minutes
+      </div>
 
-        <div>
-          Alert me via: SMS
-          <input type="checkbox" class="smsStatus" checked="{{SMS}}">
-          Email
-          <input type="checkbox" class="emailStatus" checked="{{email}}">
-        </div>
-        <div>
-          Giblet On / Off
-          <input class="gibletRunningStatusForm" type="checkbox" checked="{{active}}" />
-        </div>
-        <div class="removeGibletButton" gibletID="{{_id}}">
-          <img src="/close-background.png">
-        </div>
-      </form>
+      <div>
+        Alert me via: SMS
+        <span class="fa fa-mobile"></span>
+        <input type="checkbox" class="smsStatus" checked="{{SMS}}">
+        Email
+        <span class="fa fa-email"></span>
+        <input type="checkbox" class="emailStatus" checked="{{email}}">
+      </div>
+      <div class="removeGibletButton" gibletID="{{_id}}">
+        <span class="fa fa-times-circle"></span>
+      </div>
+    </form>
 
     </div>
   </div>
