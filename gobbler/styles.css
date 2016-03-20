@@ -72,12 +72,6 @@ input:focus {
   border: 3px solid black;
   border-radius: 10px;
   max-width: 800px;
-<<<<<<< b67d1a18fea69170b2c2bc85eb69da0120669df7
-<<<<<<< 395c6ba89b062549b3133f42569c52899dfe5b77
-
-  margin: 10px;
-=======
->>>>>>> More styles
 }
 
 .userSettingsView {
@@ -104,7 +98,9 @@ input:focus {
 .urlTextInput {
   font-size: 1.25rem;
   height: 30px;
-  font-size: 1.25rem;
+  border-radius: 5px;
+  max-width: 300px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
 }
 
 .gibletTitleInput {
