@@ -3,64 +3,66 @@
     <div class='giblet' gibletId="{{_id}}">
       <form gibletID="{{_id}}">
 
-        <!-- Title -->
-        <input class="gibletTitleInput" type="text" placeholder="Title" value="{{taskname}}">
+        <div class="top">
+          <!-- Title -->
+          <input class="gibletTitleInput" type="text" placeholder="Title" value="{{taskname}}">
 
-      <div>
-        Giblet On / Off
-        <input class="gibletRunningStatusForm" type="checkbox" checked="{{active}}" />
-      </div>
+          <div class="urlDiv">
+            <h2>URLs:</h2>
+            <!-- Url list -->
+            {{#each url}}
+              <div class="urlLine" urlIndex="{{@index}}">
+                <input class="urlTextInput" value="{{this}}" type="text" placeholder="Url here...">
 
-      <div>
-        Giblet On / Off
-        <input class="gibletRunningStatusForm" type="checkbox" checked="{{active}}" />
-      </div>
-
-      <div class="urlDiv">
-        <!-- Url list -->
-        {{#each url}}
-          <div class="urlLine" urlIndex="{{@index}}">
-            <input class="urlTextInput" value="{{this}}" type="text" placeholder="Url here...">
-
-            <!-- Subtract Url Button -->
-            {{#if subtractOne ../url.length}}
-              <div class="subtractUrlButton" gibletID="{{../_id}}" urlIndex="{{@index}}">
-                <span class="fa fa-minus-square"></span>
+                <!-- Subtract Url Button -->
+                {{#if subtractOne ../url.length}}
+                  <div class="subtractUrlButton" gibletID="{{../_id}}" urlIndex="{{@index}}">
+                    <span class="fa fa-minus-circle"></span>
+                  </div>
+                {{/if}}
+                <!-- Add Url Button -->
+                {{#if compareIndexLength @index ../url.length}}
+                  <div class="addUrlButton" gibletID="{{../_id}}">
+                    <span class="fa fa-plus-circle"></span>
+                  </div>
+                {{/if}}
               </div>
-            {{/if}}
-            <!-- Add Url Button -->
-            {{#if compareIndexLength @index ../url.length}}
-              <div class="addUrlButton" gibletID="{{../_id}}">
-                <span class="fa fa-plus-square"></span>
-              </div>
-            {{/if}}
-
+            {{/ each}}
           </div>
-        {{/ each}}
-      </div>
-      <div class="keywordDiv">Keywords:
-        <input class="keywordInput" placeholder="keyword, keyword" type="text" value="{{addSpaceAfterCommas keywords}}" >
-      </div>
+        </div> <!-- top -->
 
-      <div>
-        Check every:
-        <span class="fa fa-clock-o"></span>
-        <input class="cronJobTimer" value="{{frequency}}" type="number" gibletID="{{_id}}"/>
-        minutes
-      </div>
+        <div class="bottom">
+          <div>
+            Giblet On / Off
+            <input class="gibletRunningStatusForm" type="checkbox" checked="{{active}}" />
+          </div>
 
-      <div>
-        Alert me via: SMS
-        <span class="fa fa-mobile"></span>
-        <input type="checkbox" class="smsStatus" checked="{{SMS}}">
-        Email
-        <span class="fa fa-email"></span>
-        <input type="checkbox" class="emailStatus" checked="{{email}}">
-      </div>
-      <div class="removeGibletButton" gibletID="{{_id}}">
-        <span class="fa fa-times-circle"></span>
-      </div>
-    </form>
+          <div class="keywordDiv">Keywords:
+            <textarea class="keywordInput" placeholder="keyword, keyword" value="{{keywords}}" ></textarea>
+          </div>
+
+          <div>
+            Check every:
+            <span class="fa fa-clock-o"></span>
+            <input class="cronJobTimer" value="{{frequency}}" type="number" gibletID="{{_id}}"/>
+            minutes
+          </div>
+
+          <div>
+            Alert me via: SMS
+            <span class="fa fa-mobile"></span>
+            <input type="checkbox" class="smsStatus" checked="{{SMS}}">
+            Email
+            <span class="fa fa-envelope"></span>
+            <input type="checkbox" class="emailStatus" checked="{{email}}">
+          </div>
+
+          <div class="removeGibletButton" gibletID="{{_id}}">
+            <img src="/close-background.png">
+          </div>
+        </div><!-- bottom -->
+
+      </form>
 
     </div>
   </div>
