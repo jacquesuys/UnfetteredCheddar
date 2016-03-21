@@ -72,6 +72,7 @@ input:focus {
   border: 3px solid black;
   border-radius: 10px;
   max-width: 800px;
+  font-size: 1.25rem;
 }
 
 .userSettingsView {
