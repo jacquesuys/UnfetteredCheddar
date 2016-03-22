@@ -153,7 +153,7 @@ input:focus {
 }
 
 .urlTextInput {
-<<<<<<< 3a1716dc003d41dd3257ad12bc77283d93058d19
+
   font-size: 1.25rem;
   height: 30px;
   border-radius: 5px;
@@ -162,13 +162,9 @@ input:focus {
 }
 
 .gibletTitleInput {
-  height:100px;
-  font-size:30pt;
-=======
   font-size: 15px;
   height: 30px;
   font-size: 1.25rem;
->>>>>>> more styles
 }
 
 .removeGibletButton {
